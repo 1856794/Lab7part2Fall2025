@@ -108,4 +108,71 @@ public class ArrayMethods
             }
             System.out.println("}");
     }
+    
+    /**
+     * 
+     * 
+     */
+    public int findLast(int key){
+        int index = -1;
+        for(int i = myArray.length -1; i >= 0; i --){
+            if(myArray[i] == key){
+                return i;
+            }
+        }
+        return index;
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public int[] findAll(int key){
+        int count = 0;
+        for(int i = 0; i < myArray.length; i++){
+            if(myArray[i] == key){
+               count ++; 
+            }
+        }
+        int[] findAll = new int[count];
+        int counter = 0;
+        for(int i = 0; i < myArray.length; i++){
+            if(myArray[i] == key){
+                findAll[counter] = i;
+                counter++;
+            }
+        }
+        return findAll;
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public int[] getArray(){
+        return myArray;
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public int[] copyArray(){
+        return Arrays.copyOf(myArray, myArray.length);
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public int[] reverseArray(int[] inArray){
+        int count = 0;
+        int[] temp = Arrays.copyOf(inArray, inArray.length);
+        for(int i = inArray.length-1; i >= 0; i--){
+            inArray[count] = temp[i];
+            count++;
+        }
+        
+        return inArray;
+    }
 }
